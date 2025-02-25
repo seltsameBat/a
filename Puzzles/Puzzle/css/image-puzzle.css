@@ -107,37 +107,35 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100svh; /* Uses small viewport height */
-    overflow: hidden;
+    min-height: 100svh; /* Minimum height to fit screen */
+    overflow-x: hidden;
+    overflow-y: auto; /* Enable vertical scrolling */
     box-sizing: border-box;
 }
 
 #collage {
-    width: 95vw;
-    height: 95svh; /* Slightly smaller to fit screen */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
+    min-height: 100svh;
+    padding: 10px;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #collage #playPanel {
-    width: 90vw;
-    max-width: 90vw;
+    width: 95vw;
+    max-width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 #collage #sortable {
     display: grid;
     grid-template-columns: repeat(var(--grid-size, 3), 1fr);
     grid-template-rows: repeat(var(--grid-size, 3), 1fr);
-    gap: 1px;
+    gap: 2px;
     width: 100%;
-    max-width: 90vw;
-    max-height: 70svh; /* Reduce height to fit comfortably */
-    aspect-ratio: 1/1;
+    max-width: 95vw;
     box-sizing: border-box;
 }
 
@@ -150,8 +148,8 @@ html, body {
 }
 
 #collage img#actualImage {
-    width: 85vw;
-    max-width: 220px;
+    width: 90vw;
+    max-width: 250px;
     height: auto;
     box-sizing: border-box;
 }
