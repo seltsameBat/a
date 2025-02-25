@@ -103,17 +103,29 @@ body, html {
   
 /* Added these mobile rules at bottom */
 @media (max-width: 768px) {
-   #collage {
+ html, body {
+    margin: 0;
+    padding: 0;
     width: 100vw;
-    max-width: 100%;
-    padding: 10px;
+    height: 100dvh; /* Use dynamic viewport units */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#collage {
+    width: 100vw;
+    height: 100dvh; /* Dynamic viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     overflow: hidden;
 }
 
 #collage #playPanel {
-    width: 90vw;
-    max-width: 600px;
+    width: 95vw;
+    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -123,7 +135,9 @@ body, html {
     grid-template-rows: repeat(var(--grid-size, 3), 1fr);
     gap: 2px;
     width: 100%;
-    max-width: 90vw;
+    max-width: 95vw;
+    max-height: 80vh; /* Limit height to fit within the viewport */
+    aspect-ratio: 1/1;
     box-sizing: border-box;
 }
 
@@ -141,7 +155,6 @@ body, html {
     height: auto;
     box-sizing: border-box;
 }
-
     #collage button {
         min-height: 48px;
         padding: 15px 25px !important;
